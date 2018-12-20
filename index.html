@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Learning React State</title>
+    <script src="http://fb.me/react-0.13.3.js"></script>
+   <script src="http://fb.me/JSXTransformer-0.13.3.js"></script>
+  </head>
+  <body>
+    <h1>Facebook User's list of likes</h1>
+    <div id="user"></div>
+    <div id="main"></div>
+    <a onClick='logout()' href='#'>Logout</a>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: '2450695778290988',
+          xfbml: true,
+          version: 'v2.2'
+        });
+        checkLoginStatusAndLoadUserLikes();
+      };
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk/debug.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="text/jsx" src="index.js"></script>
+  </body>
+</html>
